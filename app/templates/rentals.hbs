@@ -7,5 +7,25 @@
     {{/link-to}}
 </div>
 
-
-{{outlet}}
+{{#each this.model as |rental|}}
+    <article class="listing">
+        <div class="details">
+            <h3>{{rental.title}}</h3>
+            <div class="detail image">
+                <img src={{rental.image}}>
+            </div>
+            <div class="detail owner">
+                <span>Owner: </span> {{rental.owner}}
+            </div>
+            <div class="detail type">
+                <span>Type: </span> {{rental.category}}
+            </div>
+            <div class="detail location">
+                <span>Location: </span> {{rental.city}}
+            </div>
+            <div class="detail bedrooms">
+                <span>Bedrooms: </span> {{rental.bedrooms}}
+            </div>
+        </div>
+    </article>
+    {{/each}}
